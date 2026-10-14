@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GGMU Academy | Glory Glory Coding United</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col selection:bg-red-600 selection:text-white"
+  >
+    <!-- Navbar Modern Glassmorphism (Tema GGMU Merah & Hitam) -->
+    <header
+      class="sticky top-0 z-50 backdrop-blur-md bg-zinc-950/80 border-b border-zinc-800/80"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <div
+          class="flex items-center gap-3 cursor-pointer"
+          onclick="switchTab('gallery')"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-rose-700 flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-red-600/30"
+          >
+            MU
+          </div>
+          <div>
+            <span
+              class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent"
+              >GGMU</span
+            >
+            <span
+              class="block text-xs font-semibold tracking-widest text-red-500 uppercase"
+              >Academy</span
+            >
+          </div>
+        </div>
+
+        <nav
+          class="flex items-center gap-2 bg-zinc-900/90 border border-zinc-800 p-1.5 rounded-full shadow-inner"
+        >
+          <button
+            onclick="switchTab('gallery')"
+            id="nav-gallery"
+            class="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-md shadow-red-600/30"
+          >
+            Gallery Kegiatan
+          </button>
+          <button
+            onclick="switchTab('pendaftaran')"
+            id="nav-pendaftaran"
+            class="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-zinc-400 hover:text-white"
+          >
+            Pendaftaran
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-10 w-full">
+      <!-- ================= HALAMAN GALLERY ================= -->
+      <section id="page-gallery" class="space-y-12">
+        <!-- Hero Section Gallery -->
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-semibold tracking-wide uppercase"
+          >
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            Semangat Juara di Dunia Coding
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-extrabold tracking-tight text-white"
+          >
+            Fight for Glory, Code with Passion
+          </h2>
+          <p class="text-zinc-400 text-base leading-relaxed">
+            Dokumentasi aktivitas pelatihan intensif di GGMU Academy, tempat di
+            mana para developer muda dibentuk menjadi squad programmer yang
+            tangguh dan siap bertarung di industri digital.
+          </p>
+        </div>
+
+        <!-- Grid Galeri Kegiatan -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="group bg-zinc-900/60 rounded-2xl border border-zinc-800 overflow-hidden hover:border-red-500/50 transition-all duration-500 hover:-translate-y-1.5 flex flex-col"
+          >
+            <div class="relative overflow-hidden h-56">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
+                alt="Intensive Coding"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent opacity-60"
+              ></div>
+              <span
+                class="absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 backdrop-blur-md"
+              >
+                Tactical Coding
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-3">
+              <h3
+                class="text-xl font-bold text-white group-hover:text-red-500 transition-colors"
+              >
+                Sesi Latihan Logika & Syntax
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed flex-grow">
+                Peserta digembleng langsung dalam membedah algoritma dan
+                menyusun baris kode berkualitas tinggi di bawah arahan
+                instruktur berpengalaman.
+              </p>
+              <div
+                class="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 font-medium"
+              >
+                <span>⚽ Sesi Pagi & Sore</span>
+                <span class="text-red-500 font-semibold">Camp Utama</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group bg-zinc-900/60 rounded-2xl border border-zinc-800 overflow-hidden hover:border-red-500/50 transition-all duration-500 hover:-translate-y-1.5 flex flex-col"
+          >
+            <div class="relative overflow-hidden h-56">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                alt="Teamwork Project"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent opacity-60"
+              ></div>
+              <span
+                class="absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 backdrop-blur-md"
+              >
+                Squad Teamwork
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-3">
+              <h3
+                class="text-xl font-bold text-white group-hover:text-red-500 transition-colors"
+              >
+                Kolaborasi Tim & Hackathon
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed flex-grow">
+                Membangun kerja sama tim yang solid layaknya sebuah kesebelasan
+                sepak bola profesional untuk menyelesaikan project aplikasi
+                kompleks.
+              </p>
+              <div
+                class="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 font-medium"
+              >
+                <span>⚽ Team Play</span>
+                <span class="text-red-500 font-semibold">Project Build</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group bg-zinc-900/60 rounded-2xl border border-zinc-800 overflow-hidden hover:border-red-500/50 transition-all duration-500 hover:-translate-y-1.5 flex flex-col"
+          >
+            <div class="relative overflow-hidden h-56">
+              <img
+                src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80"
+                alt="Tech Seminar"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent opacity-60"
+              ></div>
+              <span
+                class="absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 backdrop-blur-md"
+              >
+                Masterclass Talk
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow space-y-3">
+              <h3
+                class="text-xl font-bold text-white group-hover:text-red-500 transition-colors"
+              >
+                Strategi Karier Tech Bersama Expert
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed flex-grow">
+                Mendapatkan wawasan taktis langsung dari para Tech Leader
+                industri mengenai cara menembus perusahaan teknologi papan atas
+                dunia.
+              </p>
+              <div
+                class="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 font-medium"
+              >
+                <span>⚽ Special Guest</span>
+                <span class="text-red-500 font-semibold">Sharing Session</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div
+          class="bg-gradient-to-r from-red-950/40 via-zinc-900 to-zinc-900 border border-red-600/30 rounded-3xl p-8 md:p-12 text-center space-y-6 relative overflow-hidden"
+        >
+          <div
+            class="absolute -right-20 -bottom-20 w-64 h-64 bg-red-600/10 rounded-full blur-3xl pointer-events-none"
+          ></div>
+          <h3 class="text-2xl md:text-3xl font-bold text-white">
+            Siap Bergabung dengan Squad GGMU Academy?
+          </h3>
+          <p class="text-zinc-400 max-w-xl mx-auto text-sm">
+            Amankan posisimu di skuad utama pelatihan program batch mendatang.
+          </p>
+          <button
+            onclick="switchTab('pendaftaran')"
+            class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 text-white font-bold hover:opacity-95 transition-all shadow-lg shadow-red-600/30"
+          >
+            <span>Daftar Sekarang</span>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= HALAMAN PENDAFTARAN ================= -->
+      <section id="page-pendaftaran" class="hidden max-w-2xl mx-auto space-y-6">
+        <div class="text-center space-y-2">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-semibold tracking-wide uppercase"
+          >
+            Formulir Resmi Squad
+          </div>
+          <h2 class="text-3xl font-extrabold text-white">
+            Pendaftaran Anggota GGMU Academy
+          </h2>
+          <p class="text-zinc-400 text-sm">
+            Isi data identitas diri Anda dengan valid untuk bergabung.
+          </p>
+        </div>
+
+        <!-- Form Pendaftaran -->
+        <form
+          id="formPendaftaran"
+          onsubmit="handleFormSubmit(event)"
+          class="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 p-8 rounded-3xl shadow-2xl space-y-5"
+        >
+          <div class="space-y-1.5">
+            <label
+              class="block text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >NIK (Nomor Induk Kependudukan)</label
+            >
+            <input
+              type="text"
+              id="nik"
+              required
+              maxlength="16"
+              placeholder="Masukkan 16 digit NIK"
+              class="w-full bg-zinc-950/60 border border-zinc-800 px-4 py-3 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all"
+            />
+          </div>
+
+          <div class="space-y-1.5">
+            <label
+              class="block text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="nama"
+              required
+              placeholder="Nama lengkap sesuai KTP"
+              class="w-full bg-zinc-950/60 border border-zinc-800 px-4 py-3 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all"
+            />
+          </div>
+
+          <div class="space-y-1.5">
+            <label
+              class="block text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >Jenis Kelamin</label
+            >
+            <div class="grid grid-cols-2 gap-4 pt-1">
+              <label
+                class="flex items-center gap-3 p-3 rounded-xl bg-zinc-950/60 border border-zinc-800 cursor-pointer hover:border-zinc-700 transition-all"
+              >
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Laki-laki"
+                  required
+                  class="text-red-600 focus:ring-red-600 bg-zinc-900 border-zinc-700"
+                />
+                <span class="text-sm font-medium text-zinc-200">Laki-laki</span>
+              </label>
+              <label
+                class="flex items-center gap-3 p-3 rounded-xl bg-zinc-950/60 border border-zinc-800 cursor-pointer hover:border-zinc-700 transition-all"
+              >
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Perempuan"
+                  required
+                  class="text-red-600 focus:ring-red-600 bg-zinc-900 border-zinc-700"
+                />
+                <span class="text-sm font-medium text-zinc-200">Perempuan</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label
+              class="block text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >No HP / WhatsApp</label
+            >
+            <input
+              type="tel"
+              id="nohp"
+              required
+              placeholder="Contoh: 081234567890"
+              class="w-full bg-zinc-950/60 border border-zinc-800 px-4 py-3 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all"
+            />
+          </div>
+
+          <div class="space-y-1.5">
+            <label
+              class="block text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >Alamat</label
+            >
+            <textarea
+              id="alamat"
+              rows="3"
+              required
+              placeholder="Alamat domisili saat ini"
+              class="w-full bg-zinc-950/60 border border-zinc-800 px-4 py-3 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all resize-none"
+            ></textarea>
+          </div>
+
+          <div class="space-y-1.5">
+            <label
+              class="block text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >Bahasa Pemrograman yang Diminati</label
+            >
+            <select
+              id="bahasa"
+              required
+              class="w-full bg-zinc-950/60 border border-zinc-800 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all"
+            >
+              <option value="" disabled selected class="text-zinc-600">
+                -- Pilih Bahasa Pemrograman --
+              </option>
+              <option value="JavaScript (React/Node.js)">
+                JavaScript (React / Node.js Fullstack)
+              </option>
+              <option value="Python (AI & Data Science)">
+                Python (AI & Data Science)
+              </option>
+              <option value="PHP (Laravel)">PHP (Laravel Backend)</option>
+              <option value="Java (Android / Enterprise)">
+                Java (Android & Enterprise)
+              </option>
+              <option value="Go (Golang)">Go (Golang Systems)</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full mt-2 py-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 text-white font-bold tracking-wide hover:opacity-95 transition-all shadow-lg shadow-red-600/30"
+          >
+            Simpan Pendaftaran
+          </button>
+        </form>
+
+        <!-- Hasil Pendaftaran (Hidden Secara Default) -->
+        <div
+          id="hasilPendaftaran"
+          class="hidden bg-zinc-900/90 backdrop-blur-xl border border-red-500/30 p-8 rounded-3xl shadow-2xl space-y-6"
+        >
+          <div
+            class="flex items-center gap-4 bg-red-500/10 border border-red-500/20 p-4 rounded-2xl"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center text-red-500 text-2xl font-bold flex-shrink-0"
+            >
+              ✓
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-lg">
+                Pendaftaran Berhasil Disimpan!
+              </h3>
+              <p class="text-xs text-zinc-400">
+                Data Anda telah tercatat sebagai calon anggota GGMU Academy.
+              </p>
+            </div>
+          </div>
+
+          <div class="divide-y divide-zinc-800/80 text-sm">
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-zinc-400">NIK:</span>
+              <span
+                id="res-nik"
+                class="font-mono font-semibold text-white"
+              ></span>
+            </div>
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-zinc-400">Nama Lengkap:</span>
+              <span id="res-nama" class="font-semibold text-white"></span>
+            </div>
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-zinc-400">Jenis Kelamin:</span>
+              <span id="res-gender" class="font-semibold text-white"></span>
+            </div>
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-zinc-400">No HP:</span>
+              <span id="res-nohp" class="font-semibold text-white"></span>
+            </div>
+            <div class="py-3 flex justify-between items-start gap-4">
+              <span class="text-zinc-400 flex-shrink-0">Alamat:</span>
+              <span
+                id="res-alamat"
+                class="font-semibold text-white text-right"
+              ></span>
+            </div>
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-zinc-400">Bahasa Pemrograman:</span>
+              <span id="res-bahasa" class="font-semibold text-red-500"></span>
+            </div>
+          </div>
+
+          <button
+            onclick="resetForm()"
+            class="w-full py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold transition-all border border-zinc-700"
+          >
+            Isi Formulir Baru
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-zinc-900 bg-zinc-950 py-8 text-center text-zinc-500 text-xs"
+    >
+      <p>
+        &copy; 2026 GGMU Academy. Glory Glory Coding United. All rights
+        reserved.
+      </p>
+    </footer>
+
+    <!-- Skrip JavaScript -->
+    <script>
+      function switchTab(tab) {
+        const pageGallery = document.getElementById("page-gallery");
+        const pagePendaftaran = document.getElementById("page-pendaftaran");
+        const navGallery = document.getElementById("nav-gallery");
+        const navPendaftaran = document.getElementById("nav-pendaftaran");
+
+        if (tab === "gallery") {
+          pageGallery.classList.remove("hidden");
+          pagePendaftaran.classList.add("hidden");
+          navGallery.className =
+            "px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-md shadow-red-600/30";
+          navPendaftaran.className =
+            "px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-zinc-400 hover:text-white";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          pageGallery.classList.add("hidden");
+          pagePendaftaran.classList.remove("hidden");
+          navPendaftaran.className =
+            "px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-md shadow-red-600/30";
+          navGallery.className =
+            "px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-zinc-400 hover:text-white";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      function handleFormSubmit(event) {
+        event.preventDefault(); // Mencegah reload form bawaan
+
+        // Dialog konfirmasi sesuai permintaan
+        let konfirmasi = confirm("Apakah Anda sudah yakin untuk menyimpan?");
+
+        if (konfirmasi) {
+          // Ambil nilai input
+          let nik = document.getElementById("nik").value;
+          let nama = document.getElementById("nama").value;
+          let gender = document.querySelector(
+            'input[name="gender"]:checked',
+          ).value;
+          let nohp = document.getElementById("nohp").value;
+          let alamat = document.getElementById("alamat").value;
+          let bahasa = document.getElementById("bahasa").value;
+
+          // Tampilkan ke area hasil
+          document.getElementById("res-nik").innerText = nik;
+          document.getElementById("res-nama").innerText = nama;
+          document.getElementById("res-gender").innerText = gender;
+          document.getElementById("res-nohp").innerText = nohp;
+          document.getElementById("res-alamat").innerText = alamat;
+          document.getElementById("res-bahasa").innerText = bahasa;
+
+          // Sembunyikan form dan tampilkan hasil
+          document.getElementById("formPendaftaran").classList.add("hidden");
+          document
+            .getElementById("hasilPendaftaran")
+            .classList.remove("hidden");
+        }
+      }
+
+      function resetForm() {
+        document.getElementById("formPendaftaran").reset();
+        document.getElementById("formPendaftaran").classList.remove("hidden");
+        document.getElementById("hasilPendaftaran").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
